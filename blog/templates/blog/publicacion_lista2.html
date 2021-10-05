@@ -1,0 +1,15 @@
+{% extends 'blog/base2.html' %}
+
+{% block content %}
+{% for publicacion in publicaciones %}
+<div class="box">
+    <div class="notification is-link">
+{{ publicacion.fecha_publicacion }}
+</div>
+<h2><a href="{% url 'publicacion_detalle' pk=publicacion.pk %}">{{ publicacion.titulo }}</a></h2>
+<div class="content">
+{{ publicacion.texto|linebreaksbr }}
+</div> 
+</div>
+{% endfor %}
+{% endblock %} 
