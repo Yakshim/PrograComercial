@@ -5,19 +5,79 @@
         <title>Django Girls blog</title>        
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     </head>
     <body>
-        <section class="hero is-info">
-            <div class="hero-body">
-              <h1 class="title">
-                Django Girls Blog
-              </h1>
-              <p class="subtitle">
-                Mi blog con diseño en <strong>bulma</strong>
-              </p>
+        <section class="hero is-info is-medium">
+            <!-- Hero head: will stick at the top -->
+            <div class="hero-head">
+              <nav class="navbar">
+                <div class="container">
+                  <div class="navbar-brand">
+                    <a class="navbar-item">
+                      <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
+                    </a>
+                    <span class="navbar-burger" data-target="navbarMenuHeroA">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </span>
+                  </div>
+                  <div id="navbarMenuHeroA" class="navbar-menu">
+                    <div class="navbar-end">
+                      <a class="navbar-item is-active" href="http://127.0.0.1:8000/"> 
+                        Inicio
+                      </a>
+                      <a class="navbar-item" href="{% url 'publicacion_nueva' %}" >
+                        Ingresos
+                      </a>
+                      <a class="navbar-item">
+                        Documentaciòn
+                      </a>
+                      <span class="navbar-item">
+                        <a class="button is-info is-inverted">
+                            <span class="icon">
+                                <i class="fab fa-github"></i>
+                          </span>
+                          <span>Descarga</span>
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </nav>
             </div>
-        </section>
+          
+            <!-- Hero content: will be in the middle -->
+            <div class="hero-body">
+              <div class="container has-text-centered">
+                <p class="title">
+                  Programaciòn Comercial
+                </p>
+                <p class="subtitle">
+                  Octavo Semestre
+                </p>
+              </div>
+            </div>
+          
+            <!-- Hero footer: will stick at the bottom -->
+            <div class="hero-foot">
+              <nav class="tabs">
+                <div class="container">
+                  <ul>
+                    <li><a>Overview</a></li>
+                    <li><a>Modifiers</a></li>
+                    <li><a>Grid</a></li>
+                    <li><a>Elements</a></li>
+                    <li><a>Components</a></li>
+                    <li><a>Layout</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </section>
+
         <div class="content container">
             <div class="row">
                 <div class="column is-8">
