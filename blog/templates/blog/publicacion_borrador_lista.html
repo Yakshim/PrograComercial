@@ -1,0 +1,11 @@
+{% extends 'blog/base2.html' %}
+
+{% block content %}
+    {% for publicacion in publicaciones %}
+        <div class="box">
+            <p class="notification is-link">creada: {{ publicacion.fecha_publicacion|date:'d-m-Y' }}</p>
+            <h1><a href="{% url 'publicacion_detalle' pk=publicacion.pk %}">{{ publicacion.titulo }}</a></h1>
+            <p>{{ publicacion.texto|truncatechars:200 }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

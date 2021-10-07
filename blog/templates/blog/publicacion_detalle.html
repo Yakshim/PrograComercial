@@ -2,15 +2,18 @@
 
     {% block content %}
         <div class="box">
-            {% if publicacion.fecha_publicacion%}
+            {% if publicacion.fecha_publicacion %}
                 <div class="notification is-danger">
                     {{ publicacion.fecha_publicacion }}
                 </div>
+
+            {% else %}
+                <a class="button is-link" href="{% url 'publicacion_publicar' pk=publicacion.pk %}"><span class="fa fa-check"></span></a>
+            
             {% endif %}
-            <a class="button is-link" href="{% url 'publicacion_editar' pk=publicacion.pk %}"><span class="fa fa-pencil"></span></a>
-            <div class="content">    
+                <a class="button is-link" href="{% url 'publicacion_editar' pk=publicacion.pk %}"><span class="fa fa-pencil"></span></a>
+                <a class="button is-link" href="{% url 'publicacion_eliminar' pk=publicacion.pk %}"><span class="fa fa-eraser"></span></a>       
                 <h2>{{ publicacion.titulo }}</h2>
-            </div>
                 <p>{{ publicacion.texto|linebreaksbr }}</p>
         </div>
     {% endblock %}                
